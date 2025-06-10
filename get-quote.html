@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درخواست قیمت - سعید محمدپور</title>
+    
+    <!-- Google Fonts: Vazirmatn -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-dark-green: #283618;
+            --color-olive-green: #606c38;
+            --color-cream: #fefae0;
+            --color-goldenrod: #dda15e;
+            --color-burnt-orange: #bc6c25;
+            --background-color: var(--color-cream);
+            --text-color: var(--color-dark-green);
+            --card-bg-color: #ffffff;
+            --accent-color: var(--color-goldenrod);
+            --button-color: var(--color-burnt-orange);
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --border-radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), var(--button-color));
+            border-radius: 3px;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            position: sticky; top: 0; width: 100%;
+            background-color: rgba(254, 250, 224, 0.85);
+            backdrop-filter: blur(12px); box-shadow: var(--shadow); z-index: 1000;
+        }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--text-color); }
+        .nav-links { list-style: none; display: flex; gap: 2.5rem; }
+        .nav-links a {
+            color: var(--text-color); text-decoration: none; font-weight: 500;
+            font-size: 1.1rem; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--button-color); }
+        
+        /* --- Form Section --- */
+        .quote-section {
+            padding: 6rem 0;
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg-color);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            font-family: 'Vazirmatn', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .cta-button {
+            background-color: var(--button-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(188, 108, 37, 0.5);
+        }
+        
+        /* --- Footer --- */
+        footer { text-align: center; padding: 4rem 0; background-color: var(--color-dark-green); color: var(--color-cream); }
+        .social-links { margin-bottom: 1.5rem; }
+        .social-links a { color: var(--color-cream); font-size: 1.8rem; margin: 0 1rem; transition: color 0.3s; }
+        .social-links a:hover { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+
+    <!-- ======================= NAVBAR ======================= -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo" style="text-decoration: none;">
+                <span>سعید محمدپور</span>
+            </a>
+            <ul class="nav-links">
+                 <li><a href="index.html#hero">خانه</a></li>
+                <li><a href="index.html#resume">رزومه</a></li>
+                <li><a href="index.html#portfolio">نمونه‌کار</a></li>
+                <li><a href="index.html#services">خدمات</a></li>
+                <li><a href="index.html#blog">وبلاگ</a></li>
+                <li><a href="index.html#contact">تماس</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="quote-section">
+            <div class="container">
+                <h2>دریافت مشاوره و قیمت</h2>
+                <div class="form-container">
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="name">نام و نام خانوادگی</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">ایمیل</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                         <div class="form-group">
+                            <label for="phone">شماره تماس (اختیاری)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">خدمت مورد نظر</label>
+                            <select id="service" name="service">
+                                <option value="none">انتخاب کنید...</option>
+                                <option value="wordpress-design">طراحی سایت وردپرس</option>
+                                <option value="app-development">اپلیکیشن اندروید و iOS</option>
+                                <option value="custom-coding">طراحی سایت کدنویسی</option>
+                                <option value="enterprise-platforms">پلتفرم‌های سازمانی</option>
+                                <option value="graphic-design">طراحی گرافیک و برندینگ</option>
+                                <option value="content-creation">تولید محتوا</option>
+                                <option value="admin-services">ادمین سایت و پیج</option>
+                                <option value="seo">سئو و بهینه‌سازی</option>
+                                <option value="ai-solutions">هوش مصنوعی</option>
+                                <option value="other">سایر موارد</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">توضیحات پروژه</label>
+                            <textarea id="description" name="description" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">ارسال درخواست</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/Saeid-Mohammadpour" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/saeidmohammadpour" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/yourusername" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p>&copy; ۱۴۰۳ | تمامی حقوق برای سعید محمدپور محفوظ است.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check for URL parameters to pre-select a service
+            const urlParams = new URLSearchParams(window.location.search);
+            const service = urlParams.get('service');
+
+            if (service) {
+                const serviceSelect = document.getElementById('service');
+                if (serviceSelect) {
+                    serviceSelect.value = service;
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
