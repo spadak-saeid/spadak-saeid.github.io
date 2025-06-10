@@ -334,58 +334,43 @@
             color: var(--color-dark-green);
         }
 
-        /* --- Pricing Section --- */
-        .pricing-grid {
+        /* --- Services Section --- */
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            align-items: center;
         }
-        .pricing-card {
+        .service-card {
             background-color: var(--card-bg-color);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            padding: 2.5rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 5px solid transparent;
+            border-top: 5px solid var(--color-olive-green);
         }
-        .pricing-card:hover {
+        .service-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
-        }
-        .pricing-card.popular {
-            transform: scale(1.05);
             border-color: var(--button-color);
         }
-        .pricing-card h3 {
-            font-size: 1.8rem;
-            color: var(--color-dark-green);
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--button-color);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
         }
-        .price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin: 1rem 0;
-            color: var(--color-burnt-orange);
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
         }
-        .price span {
-            font-size: 1rem;
-            font-weight: 400;
-        }
-        .pricing-features {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: right;
-        }
-        .pricing-features li {
+        .service-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
         }
-        .pricing-features li i {
-            color: var(--color-olive-green);
-            margin-left: 0.8rem;
-            font-size: 1.2rem;
+        .service-card p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
         /* --- Timeline (from original) --- */
@@ -468,7 +453,6 @@
         /* --- Responsive Design --- */
         @media (max-width: 992px) {
             #hero h1 { font-size: 3rem; }
-            .pricing-card.popular { transform: scale(1); }
         }
 
         @media (max-width: 768px) {
@@ -502,7 +486,7 @@
                 <li><a href="#hero" class="active">خانه</a></li>
                 <li><a href="#resume">رزومه</a></li>
                 <li><a href="#portfolio">نمونه‌کار</a></li>
-                <li><a href="#pricing">خدمات</a></li>
+                <li><a href="#services">خدمات</a></li>
                 <li><a href="#blog">وبلاگ</a></li>
                 <li><a href="#contact">تماس</a></li>
             </ul>
@@ -635,49 +619,73 @@
             </div>
         </section>
 
-        <!-- ======================= PRICING ======================= -->
-        <section id="pricing">
+        <!-- ======================= SERVICES ======================= -->
+        <section id="services">
             <div class="container">
-                <h2>خدمات و تعرفه‌ها</h2>
-                <div class="pricing-grid">
-                    <!-- Pricing Plan 1: Basic -->
-                    <div class="pricing-card">
-                        <h3>پروژه فریلنسری</h3>
-                        <p>برای پروژه‌های کوچک و متوسط</p>
-                        <div class="price">توافقی</div>
-                        <ul class="pricing-features">
-                            <li><i class="fa-solid fa-check"></i>توسعه یک ماژول خاص</li>
-                            <li><i class="fa-solid fa-check"></i>رفع اشکال و بهینه‌سازی</li>
-                            <li><i class="fa-solid fa-check"></i>پیاده‌سازی API</li>
-                            <li><i class="fa-solid fa-times"></i>پشتیبانی بلندمدت</li>
-                        </ul>
-                        <a href="#contact" class="cta-button">شروع همکاری</a>
+                <h2>خدمات ما</h2>
+                <div class="services-grid">
+                    <!-- Service 1: WordPress -->
+                    <div class="service-card">
+                        <i class="fab fa-wordpress service-icon"></i>
+                        <h3>طراحی سایت وردپرس</h3>
+                        <p>ایجاد وب‌سایت‌های حرفه‌ای، فروشگاهی و شرکتی با سیستم مدیریت محتوای قدرتمند وردپرس.</p>
+                        <a href="#contact" class="cta-button">درخواست قیمت</a>
                     </div>
-                    <!-- Pricing Plan 2: Popular -->
-                    <div class="pricing-card popular">
-                        <h3>مشاوره فنی</h3>
-                        <p>بهترین انتخاب برای تیم‌ها</p>
-                        <div class="price">ساعتی<span>/تماس بگیرید</span></div>
-                        <ul class="pricing-features">
-                            <li><i class="fa-solid fa-check"></i>بررسی و بازبینی کد (Code Review)</li>
-                            <li><i class="fa-solid fa-check"></i>طراحی معماری نرم‌افزار</li>
-                            <li><i class="fa-solid fa-check"></i>آموزش و منتورینگ تیم</li>
-                            <li><i class="fa-solid fa-check"></i>ارائه راهکارهای فنی</li>
-                        </ul>
-                        <a href="#contact" class="cta-button">درخواست مشاوره</a>
+                    <!-- Service 2: App Development -->
+                    <div class="service-card">
+                        <i class="fa-solid fa-mobile-screen-button service-icon"></i>
+                        <h3>اپلیکیشن اندروید و iOS</h3>
+                        <p>طراحی و توسعه اپلیکیشن‌های موبایل نیتیو و هیبرید برای پلتفرم‌های اندروید و iOS.</p>
+                        <a href="#contact" class="cta-button">درخواست قیمت</a>
                     </div>
-                    <!-- Pricing Plan 3: Enterprise -->
-                    <div class="pricing-card">
-                        <h3>همکاری بلندمدت</h3>
-                        <p>برای شرکت‌ها و استارتاپ‌ها</p>
-                        <div class="price">قراردادی</div>
-                        <ul class="pricing-features">
-                            <li><i class="fa-solid fa-check"></i>توسعه کامل یک محصول</li>
-                            <li><i class="fa-solid fa-check"></i>مدیریت فنی پروژه</li>
-                            <li><i class="fa-solid fa-check"></i>پشتیبانی و نگهداری کامل</li>
-                            <li><i class="fa-solid fa-check"></i>تعهد و در دسترس بودن کامل</li>
-                        </ul>
-                        <a href="#contact" class="cta-button">مذاکره و تماس</a>
+                    <!-- Service 3: Custom Coding -->
+                    <div class="service-card">
+                        <i class="fa-solid fa-code service-icon"></i>
+                        <h3>طراحی سایت کدنویسی</h3>
+                        <p>ساخت وب‌سایت‌های سفارشی و پلتفرم‌های اختصاصی با استفاده از جدیدترین تکنولوژی‌ها.</p>
+                        <a href="#contact" class="cta-button">درخواست قیمت</a>
+                    </div>
+                    <!-- Service 4: Enterprise Platforms -->
+                    <div class="service-card">
+                        <i class="fa-solid fa-building service-icon"></i>
+                        <h3>پلتفرم‌های سازمانی</h3>
+                        <p>طراحی و پیاده‌سازی راهکارهای نرم‌افزاری جامع برای مدیریت فرآیندهای داخلی سازمان‌ها.</p>
+                        <a href="#contact" class="cta-button">درخواست قیمت</a>
+                    </div>
+                    <!-- Service 5: Graphic Design -->
+                    <div class="service-card">
+                        <i class="fa-solid fa-palette service-icon"></i>
+                        <h3>طراحی گرافیک و برندینگ</h3>
+                        <p>طراحی لوگو، بنر، پوستر و هویت بصری کامل برای کسب‌وکار شما جهت تمایز در بازار.</p>
+                        <a href="#contact" class="cta-button">درخواست قیمت</a>
+                    </div>
+                    <!-- Service 6: Content Creation -->
+                    <div class="service-card">
+                        <i class="fa-brands fa-youtube service-icon"></i>
+                        <h3>تولید محتوا</h3>
+                        <p>تولید محتوای ویدیویی و متنی جذاب برای شبکه‌های اجتماعی مانند اینستاگرام و یوتیوب.</p>
+                        <a href="#contact" class="cta-button">درخواست قیمت</a>
+                    </div>
+                     <!-- Service 7: Admin -->
+                     <div class="service-card">
+                        <i class="fa-solid fa-users-gear service-icon"></i>
+                        <h3>ادمین سایت و پیج</h3>
+                        <p>مدیریت کامل و حرفه‌ای وب‌سایت و صفحات اجتماعی شما برای رشد و تعامل بیشتر.</p>
+                        <a href="#contact" class="cta-button">درخواست قیمت</a>
+                    </div>
+                     <!-- Service 8: SEO -->
+                     <div class="service-card">
+                        <i class="fa-solid fa-magnifying-glass-chart service-icon"></i>
+                        <h3>سئو و بهینه‌سازی</h3>
+                        <p>بهبود رتبه سایت شما در گوگل و افزایش بازدیدکنندگان از طریق استراتژی‌های سئو.</p>
+                        <a href="#contact" class="cta-button">درخواست قیمت</a>
+                    </div>
+                     <!-- Service 9: AI -->
+                     <div class="service-card">
+                        <i class="fa-solid fa-robot service-icon"></i>
+                        <h3>هوش مصنوعی</h3>
+                        <p>پیاده‌سازی راهکارهای مبتنی بر هوش مصنوعی برای هوشمندسازی فرآیندها و خدمات.</p>
+                        <a href="#contact" class="cta-button">درخواست قیمت</a>
                     </div>
                 </div>
             </div>
@@ -756,7 +764,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
 
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('section, header');
             const navLinks = document.querySelectorAll('.nav-links a');
             const navbar = document.querySelector('.navbar');
 
@@ -765,7 +773,6 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        sectionObserver.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
@@ -773,6 +780,9 @@
             sections.forEach(section => {
                 sectionObserver.observe(section);
             });
+            // Make hero section visible by default without observing
+            document.querySelector('#hero').classList.add('visible');
+
 
             // --- Active nav link on scroll ---
             const navObserver = new IntersectionObserver(entries => {
@@ -789,7 +799,7 @@
                 });
             }, { rootMargin: '-40% 0px -60% 0px' });
             
-            document.querySelectorAll('section, header').forEach(section => {
+            sections.forEach(section => {
                 navObserver.observe(section);
             });
 
