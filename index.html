@@ -1,41 +1,672 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>رزومه سعید محمدپور</title>
-  <style>
-    body { font-family: 'Vazir', sans-serif; background: #f4f4f4; margin: 0; padding: 2rem; }
-    .container { max-width: 800px; margin: auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #333; }
-    ul { padding-right: 1.5rem; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سعید محمدپور - رزومه و وبلاگ</title>
+    <!-- Google Fonts: Vazirmatn for Persian -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* * Palette:
+         * --color-dark-green: #283618;  (For Text, Headers)
+         * --color-olive-green: #606c38; (For Cards, Secondary elements)
+         * --color-cream: #fefae0;       (Background)
+         * --color-goldenrod: #dda15e;  (Accent, Links, Borders)
+         * --color-burnt-orange: #bc6c25; (Buttons, Call-to-action)
+        */
+        :root {
+            --color-dark-green: #283618;
+            --color-olive-green: #606c38;
+            --color-cream: #fefae0;
+            --color-goldenrod: #dda15e;
+            --color-burnt-orange: #bc6c25;
+            
+            --background-color: var(--color-cream);
+            --text-color: var(--color-dark-green);
+            --card-bg-color: var(--color-olive-green);
+            --card-text-color: var(--color-cream);
+            --accent-color: var(--color-goldenrod);
+            --button-color: var(--color-burnt-orange);
+
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: rgba(254, 250, 224, 0.85); /* semi-transparent cream */
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+        
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--text-color);
+        }
+        /* The logo of the company that I work for would be loaded from the dashboard */
+        .logo img {
+            width: 40px; /* Default size, can be adjusted */
+            height: 40px;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--button-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            right: 0;
+            background-color: var(--button-color);
+            transition: width 0.4s ease;
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* --- Hero Section --- */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 0;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .hero-text {
+            max-width: 600px;
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        #hero p {
+            font-size: 1.4rem;
+            color: var(--color-olive-green);
+            margin-bottom: 2rem;
+        }
+        
+        .hero-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 8px solid var(--color-cream);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .cta-button {
+            background-color: var(--button-color);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(188, 108, 37, 0.4);
+        }
+
+        /* --- Resume Section --- */
+        .resume-section {
+            padding: 2rem 0;
+        }
+        
+        .resume-block {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--accent-color);
+        }
+
+        .resume-block h3 {
+            font-size: 1.8rem;
+            color: var(--color-burnt-orange);
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-grid {
+             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .skill-category {
+            background-color: var(--color-olive-green);
+            color: var(--card-text-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+        }
+        .skill-category h4 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: .5rem;
+            margin-bottom: 1rem;
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+        .skill-tag {
+            background-color: var(--color-cream);
+            color: var(--color-dark-green);
+            padding: .4rem .8rem;
+            border-radius: 5px;
+            font-size: .9rem;
+        }
+        
+        /* Timeline for Experience/Education */
+        .timeline {
+             position: relative;
+             max-width: 800px;
+             margin: 0 auto;
+        }
+        .timeline::after {
+             content: '';
+             position: absolute;
+             width: 3px;
+             background-color: var(--accent-color);
+             top: 0;
+             bottom: 0;
+             right: 50%;
+             margin-right: -1.5px;
+        }
+        .timeline-item {
+             padding: 10px 40px;
+             position: relative;
+             width: 50%;
+        }
+        .timeline-item:nth-child(odd) {
+             right: 0;
+        }
+        .timeline-item:nth-child(even) {
+             left: 0;
+             text-align: left;
+        }
+        .timeline-item::after {
+             content: '';
+             position: absolute;
+             width: 20px;
+             height: 20px;
+             background-color: var(--background-color);
+             border: 4px solid var(--button-color);
+             top: 25px;
+             border-radius: 50%;
+             z-index: 1;
+        }
+        .timeline-item:nth-child(odd)::after {
+            left: -10px;
+        }
+        .timeline-item:nth-child(even)::after {
+            right: -10px;
+        }
+        .timeline-content {
+             padding: 20px 30px;
+             background-color: var(--color-olive-green);
+             color: var(--card-text-color);
+             position: relative;
+             border-radius: var(--border-radius);
+        }
+        .timeline-content h4 {
+            color: var(--accent-color);
+        }
+        .timeline-content .date {
+            font-size: .9rem;
+            font-weight: 500;
+            color: var(--color-dark-green);
+            background-color: var(--accent-color);
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: .5rem;
+        }
+       
+        /* --- Blog Section --- */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .post-card {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .post-card-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .post-card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: .5rem;
+        }
+        
+        .post-card-content p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .post-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--color-olive-green);
+        }
+
+        .post-card-footer a {
+            color: var(--button-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: var(--color-dark-green);
+            color: var(--color-cream);
+        }
+        .social-links {
+            margin-top: 1rem;
+        }
+        .social-links a {
+            color: var(--color-cream);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s;
+        }
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                gap: 2rem;
+            }
+            #hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h2 { font-size: 2.2rem; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 1rem; }
+            .timeline::after { right: 31px; }
+            .timeline-item { width: 100%; padding-right: 70px; padding-left: 25px; text-align: right !important;}
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) {
+                right: 0;
+                left: auto;
+            }
+            .timeline-item::after { right: 21px; left: auto; }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-links { display: none; } /* On small screens, a burger menu would be implemented */
+            .hero-image img { width: 200px; height: 200px; }
+            #hero h1 { font-size: 2.5rem; }
+            #hero p { font-size: 1.2rem; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>سعید محمدپور</h1>
-    <p>توسعه‌دهنده Python | Flask | FastAPI | Vue</p>
 
-    <h2>مهارت‌ها</h2>
-    <ul>
-      <li>Python، Flask، FastAPI</li>
-      <li>Vue.js، React، HTML/CSS</li>
-      <li>SQL، SQLite، SQLAlchemy</li>
-    </ul>
+    <!-- ======================= NAVBAR ======================= -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- The user's logo would be loaded from the dashboard -->
+            <div class="logo">
+                <!-- <img src="placeholder.jpg" alt="Company Logo"> -->
+                <span>سعید محمدپور</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">خانه</a></li>
+                <li><a href="#resume">رزومه</a></li>
+                <li><a href="#blog">وبلاگ</a></li>
+                <li><a href="#contact">تماس</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h2>پروژه‌های شاخص</h2>
-    <ul>
-      <li><a href="https://github.com/spadak-saeid/spadak-platform">پلتفرم سازمانی اسپاداک</a></li>
-      <li><a href="https://github.com/spadak-saeid/tasks-manager">تسک منیجر ساده با Flask</a></li>
-    </ul>
+    <!-- ======================= HERO ======================= -->
+    <header id="hero" class="visible">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <!-- User's name and title would be loaded from the dashboard -->
+                    <h1>سعید محمدپور</h1>
+                    <p>توسعه‌دهنده پایتون | متخصص بک‌اند و وبلاگ‌نویس</p>
+                    <a href="#contact" class="cta-button">تماس با من</a>
+                </div>
+                <div class="hero-image">
+                    <!-- User's profile picture would be loaded from the dashboard -->
+                    <img src="https://placehold.co/250x250/606c38/fefae0?text=S+M" alt="سعید محمدپور">
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <h2>ارتباط با من</h2>
-    <ul>
-      <li>Email: saeid@example.com</li>
-      <li>GitHub: <a href="https://github.com/spadak-saeid">spadak-saeid</a></li>
-    </ul>
-  </div>
+    <main>
+        <!-- ======================= RESUME ======================= -->
+        <section id="resume">
+            <div class="container">
+                <h2>رزومه من</h2>
+                
+                <!-- "About Me" section -->
+                <div class="resume-section">
+                    <div class="resume-block">
+                        <h3>درباره من</h3>
+                        <!-- "About Me" text would be loaded from the dashboard -->
+                        <p>من یک توسعه‌دهنده پایتون علاقه‌مند با تمرکز قوی بر تکنولوژی‌های بک‌اند مانند فلسک و فست‌ای‌پی‌آی هستم. با تجربه در ساخت اپلیکیشن‌های وب قوی و مقیاس‌پذیر، از حل مسائل پیچیده و یادگیری مداوم تکنولوژی‌های جدید لذت می‌برم. در اوقات فراغت، به مشارکت در پروژه‌های متن‌باز و نوشتن در وبلاگم می‌پردازم.</p>
+                    </div>
+                </div>
+
+                <!-- "Skills" section -->
+                <div class="resume-section">
+                    <div class="resume-block">
+                        <h3>مهارت‌ها</h3>
+                        <!-- Skills would be managed from the dashboard -->
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>بک‌اند</h4>
+                                <div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Flask</span><span class="skill-tag">PostgreSQL</span></div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>فرانت‌اند</h4>
+                                <div class="skill-tags"><span class="skill-tag">JavaScript</span><span class="skill-tag">Vue.js</span><span class="skill-tag">React</span><span class="skill-tag">HTML/CSS</span></div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>ابزارها</h4>
+                                <div class="skill-tags"><span class="skill-tag">Git</span><span class="skill-tag">Docker</span><span class="skill-tag">CI/CD</span><span class="skill-tag">Linux</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- "Experience" section -->
+                <div class="resume-section">
+                    <div class="resume-block">
+                        <h3>سوابق کاری</h3>
+                         <!-- Experience items would be managed from the dashboard -->
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4>توسعه‌دهنده ارشد پایتون</h4>
+                                    <p><strong>شرکت راه‌حل‌های فناوری</strong></p>
+                                    <p>رهبری توسعه بک‌اند برای پروژه‌های کلیدی با استفاده از فست‌ای‌پی‌آی و معماری میکروسرویس.</p>
+                                    <span class="date">۱۴۰۰ - تاکنون</span>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <h4>توسعه‌دهنده بک‌اند</h4>
+                                    <p><strong>شرکت وب‌نوآوران</strong></p>
+                                     <p>توسعه و نگهداری اپلیکیشن‌های وب با استفاده از فلسک و جنگو.</p>
+                                    <span class="date">۱۳۹۸ - ۱۴۰۰</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ======================= BLOG ======================= -->
+        <section id="blog">
+            <div class="container">
+                <h2>وبلاگ</h2>
+                <!-- Blog posts would be dynamically generated here by fetching data from the CMS -->
+                <div class="blog-grid">
+                    <!-- Sample Post 1 -->
+                    <div class="post-card">
+                        <div class="post-card-image">
+                            <!-- Post image would be loaded from the dashboard -->
+                            <img src="https://placehold.co/400x200/dda15e/283618?text=FastAPI" alt="پست وبلاگ">
+                        </div>
+                        <div class="post-card-content">
+                             <!-- Post title would be loaded from the dashboard -->
+                            <h3>چرا FastAPI انتخاب بهتری برای پروژه‌های جدید است؟</h3>
+                            <!-- Post excerpt would be loaded from the dashboard -->
+                            <p>در این مقاله به بررسی مزایای کلیدی فریمورک FastAPI نسبت به رقبای دیگر مانند فلسک و جنگو می‌پردازیم و...</p>
+                            <div class="post-card-footer">
+                                <span><i class="fa-regular fa-calendar"></i> ۱۰ خرداد ۱۴۰۳</span>
+                                <a href="#">بیشتر بخوانید &larr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample Post 2 -->
+                     <div class="post-card">
+                        <div class="post-card-image">
+                             <img src="https://placehold.co/400x200/bc6c25/fefae0?text=Docker" alt="پست وبلاگ">
+                        </div>
+                        <div class="post-card-content">
+                            <h3>کانتینرسازی با داکر: راهنمای شروع سریع</h3>
+                            <p>داکر یکی از ابزارهای ضروری برای هر توسعه‌دهنده‌ای است. در این پست، یک راهنمای عملی برای شروع کار با داکر ارائه می‌شود.</p>
+                             <div class="post-card-footer">
+                                <span><i class="fa-regular fa-calendar"></i> ۲۵ اردیبهشت ۱۴۰۳</span>
+                                <a href="#">بیشتر بخوانید &larr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample Post 3 -->
+                     <div class="post-card">
+                        <div class="post-card-image">
+                             <img src="https://placehold.co/400x200/606c38/fefae0?text=VueJS" alt="پست وبلاگ">
+                        </div>
+                        <div class="post-card-content">
+                            <h3>تجربه من در ساخت یک اپلیکیشن با Vue.js</h3>
+                            <p>در این پست تجربیات خودم را از توسعه یک پروژه واقعی با فریمورک محبوب Vue.js به اشتراک می‌گذارم و...</p>
+                           <div class="post-card-footer">
+                                <span><i class="fa-regular fa-calendar"></i> ۵ اردیبهشت ۱۴۰۳</span>
+                                <a href="#">بیشتر بخوانید &larr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ======================= CONTACT ======================= -->
+        <section id="contact">
+             <div class="container" style="text-align: center;">
+                 <h2>تماس با من</h2>
+                 <!-- Contact text would be loaded from dashboard -->
+                 <p style="max-width: 600px; margin: 0 auto 2rem auto;">آماده همکاری در پروژه‌های جدید و چالش‌برانگیز هستم. از طریق ایمیل یا شبکه‌های اجتماعی با من در ارتباط باشید.</p>
+                  <a href="mailto:saeid.mohammadpour.dev@gmail.com" class="cta-button">ارسال ایمیل</a>
+             </div>
+        </section>
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://github.com/Saeid-Mohammadpour" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/saeidmohammadpour" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p style="margin-top: 1rem;">&copy; ۱۴۰۳ | تمامی حقوق برای سعید محمدپور محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Animate sections on scroll ---
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            // Make hero section visible by default without observing
+            document.querySelector('#hero').classList.add('visible');
+
+            // --- Active nav link on scroll ---
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const allSections = document.querySelectorAll('section, header');
+
+            const navObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+
+            allSections.forEach(section => {
+                navObserver.observe(section);
+            });
+
+        });
+    </script>
+
 </body>
 </html>
