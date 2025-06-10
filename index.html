@@ -211,7 +211,7 @@
         .cta-button {
             background-color: var(--button-color);
             color: white;
-            padding: 1.2rem 3rem;
+            padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-size: 1.1rem;
@@ -219,6 +219,8 @@
             transition: transform 0.3s, box-shadow 0.3s;
             display: inline-block;
             box-shadow: var(--shadow);
+            border: none;
+            cursor: pointer;
         }
         
         .cta-button:hover {
@@ -427,6 +429,42 @@
             display: inline-block;
             margin-top: .5rem;
         }
+
+        /* --- Contact Section --- */
+        #contact {
+            text-align: center;
+        }
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        .contact-info-item {
+            background: var(--card-bg-color);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        .contact-info-item:hover {
+            transform: translateY(-5px);
+        }
+        .contact-info-item i {
+            font-size: 2rem;
+            color: var(--button-color);
+            margin-bottom: 1rem;
+        }
+        .contact-info-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .contact-info-item a {
+            color: var(--color-olive-green);
+            text-decoration: none;
+            font-weight: 500;
+        }
        
         /* --- Footer --- */
         footer {
@@ -479,16 +517,15 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <!-- <img src="https://spadak-saeid.github.io/saeid.png" alt="Company Logo"> -->
                 <span>سعید محمدپور</span>
             </div>
             <ul class="nav-links">
-                <li><a href="#hero" class="active">خانه</a></li>
-                <li><a href="#resume">رزومه</a></li>
-                <li><a href="#portfolio">نمونه‌کار</a></li>
-                <li><a href="#services">خدمات</a></li>
-                <li><a href="#blog">وبلاگ</a></li>
-                <li><a href="#contact">تماس</a></li>
+                <li><a href="index.html#hero" class="active">خانه</a></li>
+                <li><a href="index.html#resume">رزومه</a></li>
+                <li><a href="index.html#portfolio">نمونه‌کار</a></li>
+                <li><a href="index.html#services">خدمات</a></li>
+                <li><a href="index.html#blog">وبلاگ</a></li>
+                <li><a href="index.html#contact">تماس</a></li>
             </ul>
         </div>
     </nav>
@@ -498,9 +535,8 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-image">
-                    <img src="https://raw.githubusercontent.com/spadak-saeid/spadak-saeid.github.io/refs/heads/main/saeid.png" alt="سعید محمدپور">
+                    <img src="https://placehold.co/200x200/606c38/fefae0?text=S+M" alt="سعید محمدپور">
                 </div>
-                <!-- User's name and title would be loaded from the dashboard -->
                 <h1>سعید محمدپور</h1>
                 <p class="subtitle">توسعه‌دهنده پایتون | متخصص بک‌اند و معماری نرم‌افزار</p>
                 <a href="#portfolio" class="cta-button">مشاهده نمونه‌کارها</a>
@@ -513,16 +549,13 @@
         <section id="resume">
             <div class="container">
                 <h2>رزومه من</h2>
-                
                 <div class="resume-block">
                     <h3><i class="fa-solid fa-user-tie"></i>درباره من</h3>
                     <p>من یک توسعه‌دهنده پایتون علاقه‌مند با تمرکز قوی بر تکنولوژی‌های بک‌اند مانند فلسک و فست‌ای‌پی‌آی هستم. با تجربه در ساخت اپلیکیشن‌های وب قوی و مقیاس‌پذیر، از حل مسائل پیچیده و یادگیری مداوم تکنولوژی‌های جدید لذت می‌برم. در اوقات فراغت، به مشارکت در پروژه‌های متن‌باز و نوشتن در وبلاگم می‌پردازم.</p>
                 </div>
-
                 <div class="resume-block">
                     <h3><i class="fa-solid fa-laptop-code"></i>سوابق کاری</h3>
                     <div class="timeline">
-                        <!-- Experience items would be managed from the dashboard -->
                         <div class="timeline-item">
                             <div class="timeline-content">
                                 <h4>توسعه‌دهنده ارشد پایتون</h4>
@@ -554,65 +587,32 @@
                     <button class="filter-btn" data-filter="frontend">فرانت‌اند</button>
                     <button class="filter-btn" data-filter="fullstack">فول استک</button>
                 </div>
-
                 <div class="portfolio-grid">
-                    <!-- Project 1 -->
                     <div class="project-card" data-category="backend">
-                        <div class="project-card-image">
-                            <img src="https://placehold.co/400x220/dda15e/283618?text=API+Gateway" alt="پروژه دروازه پرداخت">
-                        </div>
+                        <div class="project-card-image"><img src="https://placehold.co/400x220/dda15e/283618?text=API+Gateway" alt="پروژه دروازه پرداخت"></div>
                         <div class="project-card-content">
                             <h3>سیستم مدیریت API</h3>
-                            <p>یک میکروسرویس قدرتمند برای مدیریت، مسیریابی و احرازهویت درخواست‌های API در یک معماری توزیع‌شده.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">FastAPI</span>
-                                <span class="project-tag">Docker</span>
-                                <span class="project-tag">Redis</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i>دموی زنده</a>
-                                <a href="#" target="_blank"><i class="fab fa-github"></i>کد منبع</a>
-                            </div>
+                            <p>یک میکروسرویس قدرتمند برای مدیریت، مسیریابی و احرازهویت درخواست‌های API.</p>
+                            <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">FastAPI</span><span class="project-tag">Docker</span></div>
+                            <div class="project-links"><a href="#" target="_blank"><i class="fa-solid fa-link"></i>دموی زنده</a><a href="#" target="_blank"><i class="fab fa-github"></i>کد منبع</a></div>
                         </div>
                     </div>
-                    <!-- Project 2 -->
                     <div class="project-card" data-category="fullstack">
-                        <div class="project-card-image">
-                            <img src="https://placehold.co/400x220/606c38/fefae0?text=Dashboard" alt="پروژه داشبورد">
-                        </div>
+                        <div class="project-card-image"><img src="https://placehold.co/400x220/606c38/fefae0?text=Dashboard" alt="پروژه داشبورد"></div>
                         <div class="project-card-content">
                             <h3>داشبورد تحلیل داده</h3>
-                            <p>اپلیکیشن فول‌استک برای نمایش و تحلیل داده‌های فروش با نمودارهای تعاملی و گزارش‌های لحظه‌ای.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Vue.js</span>
-                                <span class="project-tag">Flask</span>
-                                <span class="project-tag">PostgreSQL</span>
-                                <span class="project-tag">Chart.js</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i>دموی زنده</a>
-                                <a href="#" target="_blank"><i class="fab fa-github"></i>کد منبع</a>
-                            </div>
+                            <p>اپلیکیشن فول‌استک برای نمایش و تحلیل داده‌های فروش با نمودارهای تعاملی.</p>
+                            <div class="project-tags"><span class="project-tag">Vue.js</span><span class="project-tag">Flask</span><span class="project-tag">PostgreSQL</span></div>
+                            <div class="project-links"><a href="#" target="_blank"><i class="fa-solid fa-link"></i>دموی زنده</a><a href="#" target="_blank"><i class="fab fa-github"></i>کد منبع</a></div>
                         </div>
                     </div>
-                    <!-- Project 3 -->
                     <div class="project-card" data-category="frontend">
-                        <div class="project-card-image">
-                            <img src="https://placehold.co/400x220/bc6c25/fefae0?text=Landing" alt="پروژه لندینگ">
-                        </div>
+                        <div class="project-card-image"><img src="https://placehold.co/400x220/bc6c25/fefae0?text=Landing" alt="پروژه لندینگ"></div>
                         <div class="project-card-content">
                             <h3>صفحه فرود معرفی محصول</h3>
-                            <p>طراحی و پیاده‌سازی یک صفحه فرود مدرن و واکنش‌گرا برای معرفی یک اپلیکیشن موبایل جدید.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">HTML5</span>
-                                <span class="project-tag">CSS3</span>
-                                <span class="project-tag">JavaScript</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#" target="_blank"><i class="fa-solid fa-link"></i>دموی زنده</a>
-                                <a href="#" target="_blank"><i class="fab fa-github"></i>کد منبع</a>
-                            </div>
+                            <p>طراحی و پیاده‌سازی یک صفحه فرود مدرن و واکنش‌گرا برای معرفی یک اپلیکیشن موبایل.</p>
+                            <div class="project-tags"><span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">JavaScript</span></div>
+                            <div class="project-links"><a href="#" target="_blank"><i class="fa-solid fa-link"></i>دموی زنده</a><a href="#" target="_blank"><i class="fab fa-github"></i>کد منبع</a></div>
                         </div>
                     </div>
                 </div>
@@ -624,69 +624,15 @@
             <div class="container">
                 <h2>خدمات ما</h2>
                 <div class="services-grid">
-                    <!-- Service 1: WordPress -->
-                    <div class="service-card">
-                        <i class="fab fa-wordpress service-icon"></i>
-                        <h3>طراحی سایت وردپرس</h3>
-                        <p>ایجاد وب‌سایت‌های حرفه‌ای، فروشگاهی و شرکتی با سیستم مدیریت محتوای قدرتمند وردپرس.</p>
-                        <a href="#contact" class="cta-button">درخواست قیمت</a>
-                    </div>
-                    <!-- Service 2: App Development -->
-                    <div class="service-card">
-                        <i class="fa-solid fa-mobile-screen-button service-icon"></i>
-                        <h3>اپلیکیشن اندروید و iOS</h3>
-                        <p>طراحی و توسعه اپلیکیشن‌های موبایل نیتیو و هیبرید برای پلتفرم‌های اندروید و iOS.</p>
-                        <a href="#contact" class="cta-button">درخواست قیمت</a>
-                    </div>
-                    <!-- Service 3: Custom Coding -->
-                    <div class="service-card">
-                        <i class="fa-solid fa-code service-icon"></i>
-                        <h3>طراحی سایت کدنویسی</h3>
-                        <p>ساخت وب‌سایت‌های سفارشی و پلتفرم‌های اختصاصی با استفاده از جدیدترین تکنولوژی‌ها.</p>
-                        <a href="#contact" class="cta-button">درخواست قیمت</a>
-                    </div>
-                    <!-- Service 4: Enterprise Platforms -->
-                    <div class="service-card">
-                        <i class="fa-solid fa-building service-icon"></i>
-                        <h3>پلتفرم‌های سازمانی</h3>
-                        <p>طراحی و پیاده‌سازی راهکارهای نرم‌افزاری جامع برای مدیریت فرآیندهای داخلی سازمان‌ها.</p>
-                        <a href="#contact" class="cta-button">درخواست قیمت</a>
-                    </div>
-                    <!-- Service 5: Graphic Design -->
-                    <div class="service-card">
-                        <i class="fa-solid fa-palette service-icon"></i>
-                        <h3>طراحی گرافیک و برندینگ</h3>
-                        <p>طراحی لوگو، بنر، پوستر و هویت بصری کامل برای کسب‌وکار شما جهت تمایز در بازار.</p>
-                        <a href="#contact" class="cta-button">درخواست قیمت</a>
-                    </div>
-                    <!-- Service 6: Content Creation -->
-                    <div class="service-card">
-                        <i class="fa-brands fa-youtube service-icon"></i>
-                        <h3>تولید محتوا</h3>
-                        <p>تولید محتوای ویدیویی و متنی جذاب برای شبکه‌های اجتماعی مانند اینستاگرام و یوتیوب.</p>
-                        <a href="#contact" class="cta-button">درخواست قیمت</a>
-                    </div>
-                     <!-- Service 7: Admin -->
-                     <div class="service-card">
-                        <i class="fa-solid fa-users-gear service-icon"></i>
-                        <h3>ادمین سایت و پیج</h3>
-                        <p>مدیریت کامل و حرفه‌ای وب‌سایت و صفحات اجتماعی شما برای رشد و تعامل بیشتر.</p>
-                        <a href="#contact" class="cta-button">درخواست قیمت</a>
-                    </div>
-                     <!-- Service 8: SEO -->
-                     <div class="service-card">
-                        <i class="fa-solid fa-magnifying-glass-chart service-icon"></i>
-                        <h3>سئو و بهینه‌سازی</h3>
-                        <p>بهبود رتبه سایت شما در گوگل و افزایش بازدیدکنندگان از طریق استراتژی‌های سئو.</p>
-                        <a href="#contact" class="cta-button">درخواست قیمت</a>
-                    </div>
-                     <!-- Service 9: AI -->
-                     <div class="service-card">
-                        <i class="fa-solid fa-robot service-icon"></i>
-                        <h3>هوش مصنوعی</h3>
-                        <p>پیاده‌سازی راهکارهای مبتنی بر هوش مصنوعی برای هوشمندسازی فرآیندها و خدمات.</p>
-                        <a href="#contact" class="cta-button">درخواست قیمت</a>
-                    </div>
+                    <div class="service-card"><i class="fab fa-wordpress service-icon"></i><h3>طراحی سایت وردپرس</h3><p>ایجاد وب‌سایت‌های حرفه‌ای، فروشگاهی و شرکتی با سیستم مدیریت محتوای وردپرس.</p><a href="get-quote.html?service=wordpress-design" class="cta-button">درخواست قیمت</a></div>
+                    <div class="service-card"><i class="fa-solid fa-mobile-screen-button service-icon"></i><h3>اپلیکیشن اندروید و iOS</h3><p>طراحی و توسعه اپلیکیشن‌های موبایل نیتیو و هیبرید برای پلتفرم‌های مختلف.</p><a href="get-quote.html?service=app-development" class="cta-button">درخواست قیمت</a></div>
+                    <div class="service-card"><i class="fa-solid fa-code service-icon"></i><h3>طراحی سایت کدنویسی</h3><p>ساخت وب‌سایت‌های سفارشی و پلتفرم‌های اختصاصی با جدیدترین تکنولوژی‌ها.</p><a href="get-quote.html?service=custom-coding" class="cta-button">درخواست قیمت</a></div>
+                    <div class="service-card"><i class="fa-solid fa-building service-icon"></i><h3>پلتفرم‌های سازمانی</h3><p>طراحی و پیاده‌سازی راهکارهای نرم‌افزاری جامع برای مدیریت فرآیندهای داخلی سازمان‌ها.</p><a href="get-quote.html?service=enterprise-platforms" class="cta-button">درخواست قیمت</a></div>
+                    <div class="service-card"><i class="fa-solid fa-palette service-icon"></i><h3>طراحی گرافیک و برندینگ</h3><p>طراحی لوگو، بنر، پوستر و هویت بصری کامل برای کسب‌وکار شما.</p><a href="get-quote.html?service=graphic-design" class="cta-button">درخواست قیمت</a></div>
+                    <div class="service-card"><i class="fa-brands fa-youtube service-icon"></i><h3>تولید محتوا</h3><p>تولید محتوای ویدیویی و متنی جذاب برای شبکه‌های اجتماعی مانند اینستاگرام و یوتیوب.</p><a href="get-quote.html?service=content-creation" class="cta-button">درخواست قیمت</a></div>
+                    <div class="service-card"><i class="fa-solid fa-users-gear service-icon"></i><h3>ادمین سایت و پیج</h3><p>مدیریت کامل و حرفه‌ای وب‌سایت و صفحات اجتماعی شما برای رشد و تعامل بیشتر.</p><a href="get-quote.html?service=admin-services" class="cta-button">درخواست قیمت</a></div>
+                    <div class="service-card"><i class="fa-solid fa-magnifying-glass-chart service-icon"></i><h3>سئو و بهینه‌سازی</h3><p>بهبود رتبه سایت شما در گوگل و افزایش بازدیدکنندگان از طریق استراتژی‌های سئو.</p><a href="get-quote.html?service=seo" class="cta-button">درخواست قیمت</a></div>
+                    <div class="service-card"><i class="fa-solid fa-robot service-icon"></i><h3>هوش مصنوعی</h3><p>پیاده‌سازی راهکارهای مبتنی بر هوش مصنوعی برای هوشمندسازی فرآیندها و خدمات.</p><a href="get-quote.html?service=ai-solutions" class="cta-button">درخواست قیمت</a></div>
                 </div>
             </div>
         </section>
@@ -695,45 +641,18 @@
         <section id="blog">
             <div class="container">
                 <h2>آخرین نوشته‌ها</h2>
-                <div class="portfolio-grid"> <!-- Re-using portfolio-grid for consistency -->
-                    <!-- Sample Post 1 -->
-                    <div class="project-card"> <!-- Re-using project-card -->
-                        <div class="project-card-image">
-                            <img src="https://placehold.co/400x220/dda15e/283618?text=FastAPI" alt="پست وبلاگ">
-                        </div>
-                        <div class="project-card-content">
-                            <h3>چرا FastAPI انتخاب بهتری برای پروژه‌های جدید است؟</h3>
-                            <p>در این مقاله به بررسی مزایای کلیدی فریمورک FastAPI نسبت به رقبا می‌پردازیم...</p>
-                            <div class="project-links">
-                                <a href="#">بیشتر بخوانید <i class="fa-solid fa-arrow-left"></i></a>
-                            </div>
-                        </div>
+                <div class="portfolio-grid">
+                    <div class="project-card">
+                        <div class="project-card-image"><img src="https://placehold.co/400x220/dda15e/283618?text=FastAPI" alt="پست وبلاگ"></div>
+                        <div class="project-card-content"><h3>چرا FastAPI انتخاب بهتری است؟</h3><p>در این مقاله به بررسی مزایای کلیدی فریمورک FastAPI نسبت به رقبا می‌پردازیم...</p><div class="project-links"><a href="blog-post.html">بیشتر بخوانید <i class="fa-solid fa-arrow-left"></i></a></div></div>
                     </div>
-                    <!-- Sample Post 2 -->
-                     <div class="project-card">
-                        <div class="project-card-image">
-                             <img src="https://placehold.co/400x220/bc6c25/fefae0?text=Docker" alt="پست وبلاگ">
-                        </div>
-                        <div class="project-card-content">
-                            <h3>کانتینرسازی با داکر: راهنمای شروع سریع</h3>
-                            <p>داکر یکی از ابزارهای ضروری برای هر توسعه‌دهنده‌ای است. راهنمای عملی برای شروع کار با داکر.</p>
-                             <div class="project-links">
-                                <a href="#">بیشتر بخوانید <i class="fa-solid fa-arrow-left"></i></a>
-                            </div>
-                        </div>
+                    <div class="project-card">
+                        <div class="project-card-image"><img src="https://placehold.co/400x220/bc6c25/fefae0?text=Docker" alt="پست وبلاگ"></div>
+                        <div class="project-card-content"><h3>کانتینرسازی با داکر: راهنمای شروع</h3><p>داکر یکی از ابزارهای ضروری برای هر توسعه‌دهنده‌ای است. راهنمای عملی برای شروع کار با داکر.</p><div class="project-links"><a href="blog-post.html">بیشتر بخوانید <i class="fa-solid fa-arrow-left"></i></a></div></div>
                     </div>
-                    <!-- Sample Post 3 -->
-                     <div class="project-card">
-                        <div class="project-card-image">
-                             <img src="https://placehold.co/400x220/606c38/fefae0?text=VueJS" alt="پست وبلاگ">
-                        </div>
-                        <div class="project-card-content">
-                            <h3>تجربه من در ساخت یک اپلیکیشن با Vue.js</h3>
-                            <p>در این پست تجربیات خودم را از توسعه یک پروژه واقعی با فریمورک محبوب Vue.js به اشتراک می‌گذارم.</p>
-                           <div class="project-links">
-                                <a href="#">بیشتر بخوانید <i class="fa-solid fa-arrow-left"></i></a>
-                            </div>
-                        </div>
+                    <div class="project-card">
+                        <div class="project-card-image"><img src="https://placehold.co/400x220/606c38/fefae0?text=VueJS" alt="پست وبلاگ"></div>
+                        <div class="project-card-content"><h3>تجربه من در ساخت اپلیکیشن با Vue.js</h3><p>در این پست تجربیات خودم را از توسعه یک پروژه واقعی با فریمورک محبوب Vue.js به اشتراک می‌گذارم.</p><div class="project-links"><a href="blog-post.html">بیشتر بخوانید <i class="fa-solid fa-arrow-left"></i></a></div></div>
                     </div>
                 </div>
             </div>
@@ -741,10 +660,32 @@
         
         <!-- ======================= CONTACT ======================= -->
         <section id="contact">
-             <div class="container" style="text-align: center;">
+             <div class="container">
                  <h2>با من در ارتباط باشید</h2>
-                 <p style="max-width: 600px; margin: 0 auto 2.5rem auto;">برای همکاری در پروژه‌های جدید، مشاوره فنی یا حتی یک گپ دوستانه، آماده‌ام. از طریق ایمیل یا شبکه‌های اجتماعی با من در ارتباط باشید.</p>
-                  <a href="mailto:saeid.mohammadpour.dev@gmail.com" class="cta-button"><i class="fa-solid fa-envelope"></i> ارسال ایمیل</a>
+                 <p style="max-width: 700px; margin: 0 auto 3rem auto;">برای همکاری، مشاوره یا هرگونه سوال، می‌توانید از راه‌های زیر با من در تماس باشید. مشتاقانه منتظر پیام شما هستم.</p>
+                 
+                 <div class="contact-info-grid">
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h4>ایمیل</h4>
+                        <a href="mailto:saeid.mohammadpour.dev@gmail.com">saeid.mohammadpour.dev@gmail.com</a>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <h4>شماره تماس</h4>
+                        <a href="tel:+989123456789">۰۹۱۲۳۴۵۶۷۸۹</a>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fab fa-github"></i>
+                        <h4>گیت‌هاب</h4>
+                        <a href="https://github.com/Saeid-Mohammadpour" target="_blank">Saeid-Mohammadpour</a>
+                    </div>
+                     <div class="contact-info-item">
+                        <i class="fab fa-instagram"></i>
+                        <h4>اینستاگرام</h4>
+                        <a href="#" target="_blank">@your_instagram</a>
+                    </div>
+                 </div>
              </div>
         </section>
     </main>
@@ -753,11 +694,13 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/Saeid-Mohammadpour" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/saeidmohammadpour" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                 <a href="https://t.me/yourusername" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                <a href="https://github.com/spadak-saeid" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/spadak-saeid" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/yourusername" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
             </div>
-            <p style="margin-top: 1rem;">&copy; ۱۴۰۳ | تمامی حقوق برای سعید محمدپور محفوظ است.</p>
+             <p>ایمیل: <a href="mailto:saeid.mohammadpour.dev@gmail.com" style="color: var(--accent-color); text-decoration: none;">saeid.mohammadpour.dev@gmail.com</a></p>
+            <p style="margin-top: 1rem;">&copy; 1404 | تمامی حقوق برای سعید محمدپور-شرکت سما پردازشگران آداک <a href="httpls://spadak.ir">SPADAK.IR</a> محفوظ است.</p>
         </div>
     </footer>
 
@@ -789,9 +732,10 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
+                        document.querySelectorAll('.nav-links a').forEach(link => {
                             link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${id}`) {
+                            // Check if the link's href matches the section's id
+                            if (link.getAttribute('href').includes(`#${id}`)) {
                                 link.classList.add('active');
                             }
                         });
@@ -799,7 +743,7 @@
                 });
             }, { rootMargin: '-40% 0px -60% 0px' });
             
-            sections.forEach(section => {
+            document.querySelectorAll('section, header').forEach(section => {
                 navObserver.observe(section);
             });
 
