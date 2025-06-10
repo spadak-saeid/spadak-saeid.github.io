@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عنوان پست وبلاگ - سعید محمدپور</title>
+    
+    <!-- Google Fonts: Vazirmatn -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-dark-green: #283618;
+            --color-olive-green: #606c38;
+            --color-cream: #fefae0;
+            --color-goldenrod: #dda15e;
+            --color-burnt-orange: #bc6c25;
+            --background-color: var(--color-cream);
+            --text-color: var(--color-dark-green);
+            --card-bg-color: #ffffff;
+            --accent-color: var(--color-goldenrod);
+            --button-color: var(--color-burnt-orange);
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --border-radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+       
+        /* --- Navbar --- */
+        .navbar {
+            position: sticky; top: 0; width: 100%;
+            background-color: rgba(254, 250, 224, 0.85);
+            backdrop-filter: blur(12px); box-shadow: var(--shadow); z-index: 1000;
+        }
+        .navbar .container { max-width: 1200px; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; }
+        .logo { font-weight: 700; font-size: 1.5rem; color: var(--text-color); }
+        .nav-links { list-style: none; display: flex; gap: 2.5rem; }
+        .nav-links a {
+            color: var(--text-color); text-decoration: none; font-weight: 500;
+            font-size: 1.1rem; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--button-color); }
+
+        /* --- Blog Post Section --- */
+        .post-section {
+            padding: 5rem 0;
+        }
+        .post-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .post-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .post-meta {
+            color: var(--color-olive-green);
+            font-weight: 500;
+        }
+        .post-image {
+            width: 100%;
+            height: 450px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow);
+        }
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .post-content {
+            background: var(--card-bg-color);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        .post-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 2;
+        }
+        .post-content h3 {
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-burnt-orange);
+        }
+        .post-content blockquote {
+            border-right: 4px solid var(--accent-color);
+            padding-right: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--color-olive-green);
+        }
+
+        /* --- Footer --- */
+        footer { text-align: center; padding: 4rem 0; background-color: var(--color-dark-green); color: var(--color-cream); }
+        .social-links { margin-bottom: 1.5rem; }
+        .social-links a { color: var(--color-cream); font-size: 1.8rem; margin: 0 1rem; transition: color 0.3s; }
+        .social-links a:hover { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+
+    <!-- ======================= NAVBAR ======================= -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo" style="text-decoration: none;">
+                <span>سعید محمدپور</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">خانه</a></li>
+                <li><a href="index.html#resume">رزومه</a></li>
+                <li><a href="index.html#portfolio">نمونه‌کار</a></li>
+                <li><a href="index.html#services">خدمات</a></li>
+                <li><a href="index.html#blog">وبلاگ</a></li>
+                <li><a href="index.html#contact">تماس</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="post-section">
+            <div class="container">
+                <article>
+                    <header class="post-header">
+                        <h1>چرا FastAPI انتخاب بهتری برای پروژه‌های جدید است؟</h1>
+                        <div class="post-meta">
+                            <span>نوشته شده توسط: سعید محمدپور</span> | 
+                            <span>تاریخ انتشار: ۲۰ خرداد ۱۴۰۳</span>
+                        </div>
+                    </header>
+                    <div class="post-image">
+                        <img src="https://placehold.co/1200x450/dda15e/283618?text=FastAPI" alt="تصویر پست وبلاگ">
+                    </div>
+                    <div class="post-content">
+                        <p>در دنیای توسعه وب با پایتون، فریم‌ورک‌های مختلفی مانند جنگو، فلسک و در سال‌های اخیر، FastAPI وجود دارند. هر کدام از این ابزارها مزایا و معایب خود را دارند، اما FastAPI به سرعت در حال تبدیل شدن به انتخاب اول بسیاری از توسعه‌دهندگان برای ساخت APIهای مدرن است. در این مقاله، به دلایل این محبوبیت و مزایای کلیدی آن می‌پردازیم.</p>
+                        
+                        <h3>سرعت فوق‌العاده بالا</h3>
+                        <p>یکی از برجسته‌ترین ویژگی‌های FastAPI، عملکرد و سرعت بالای آن است. این فریم‌ورک بر پایه Starlette (برای بخش‌های وب) و Pydantic (برای بخش اعتبارسنجی داده‌ها) ساخته شده است. به لطف استفاده از asyncio و ASGI، فریم‌ورک FastAPI می‌تواند درخواست‌ها را به صورت ناهمزمان (Asynchronous) پردازش کند که این امر منجر به بهبود چشمگیر سرعت در مقایسه با فریم‌ورک‌های سنتی مبتنی بر WSGI مانند فلسک و جنگو می‌شود.</p>
+
+                        <blockquote>این سرعت بالا به خصوص در اپلیکیشن‌هایی که نیاز به پردازش همزمان تعداد زیادی درخواست دارند، مانند میکروسرویس‌ها و سیستم‌های real-time، یک مزیت بزرگ محسوب می‌شود.</blockquote>
+
+                        <h3>اعتبارسنجی خودکار داده‌ها</h3>
+                        <p>با استفاده از تایپ‌هینت‌های استاندارد پایتون و کتابخانه قدرتمend Pydantic، فریم‌ورک FastAPI به صورت خودکار درخواست‌های ورودی را اعتبارسنجی می‌کند. این یعنی شما نیازی به نوشتن کدهای تکراری برای بررسی صحت داده‌ها (مثلاً اینکه آیا یک فیلد، عدد است یا رشته) ندارید. اگر داده‌های ورودی با مدل تعریف شده شما مطابقت نداشته باشند، FastAPI به طور خودکار یک خطای واضح با فرمت JSON برمی‌گرداند.</p>
+                        
+                        <h3>مستندسازی اتوماتیک (API Documentation)</h3>
+                        <p>یکی دیگر از قابلیت‌های بی‌نظیر FastAPI، تولید خودکار مستندات تعاملی برای API است. این فریم‌ورک به طور خودکار دو نسخه مستندات را برای شما ایجاد می‌کند: Swagger UI و ReDoc. شما می‌توانید به راحتی با مراجعه به آدرس‌های /docs و /redoc، تمام endpointهای خود را مشاهده کرده، آن‌ها را تست کنید و مدل‌های داده‌ای مورد انتظار را ببینید. این ویژگی فرآیند توسعه و تست را برای تیم‌ها بسیار ساده‌تر می‌کند.</p>
+
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================= FOOTER ======================= -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                 <a href="https://github.com/Saeid-Mohammadpour" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/saeidmohammadpour" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/yourusername" target="_blank"aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p>&copy; ۱۴۰۳ | تمامی حقوق برای سعید محمدپور محفوظ است.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
